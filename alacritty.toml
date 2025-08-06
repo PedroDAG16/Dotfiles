@@ -1,0 +1,55 @@
+live_config_reload = true
+
+import = [
+  "~/.config/alacritty/themes/themes/seashells.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dynamic_padding = true
+decorations = "none"
+opacity = 0.8
+startup_mode = "Maximized"
+
+[window.padding]
+x = 0
+y = 0
+
+[font]
+size = 13.5
+offset = {x = 0, y = -1}
+
+## FONT
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+style = "Bold"
+
+[font.italic]
+style = "Italic"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+## OUTROS
+
+[cursor]
+style = "Beam"
+unfocused_hollow = true
+
+[selection]
+save_to_clipboard = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+program = "/usr/bin/zsh"
+args = ["-l"] # inicia como login shell
+
