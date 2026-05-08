@@ -71,10 +71,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
+  git
   zsh-autosuggestions
   zsh-syntax-highlighting
-  web-search
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,7 +107,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=$HOME/go/bin:$PATH
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.npm-global/bin:$PATH"
 
+# Configuração do Dotnet
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
+
+# Configuração do JAVA_HOME
+JAVA_PATH=$(readlink -f /etc/alternatives/java)
+export JAVA_HOME=${JAVA_PATH%/bin/java}
+export PATH=$JAVA_HOME/bin:$PATH
+
+# Configuração DO APACHE MAVEN
+export M2_HOME=/opt/maven
+export PATH=${PATH}:${M2_HOME}/bin
+
+# Configuração do SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Created by `pipx` on 2026-02-20 00:29:10
+export PATH="$PATH:/home/pedro/.local/bin"
